@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.1.0/classic/ckeditor.js"></script>
+
+    <title>Document</title>
+
+</head>
+<body>
+
+<main id=app></main>
+<h1>Hello</h1>
+<h1>Classic editor</h1>
+<div id="editor">
+    <p>This is some sample content.</p>
+</div>
+<script>
+
+
+
+    ClassicEditor
+        .create(document.querySelector('#editor'), {
+            toolbar: {
+                items: [
+                    'exportPDF', 'exportWord', '|',
+                    'findAndReplace', 'selectAll', '|',
+                    'heading', '|',
+                    'bold', 'italic', 'strikethrough', 'underline', 'code', 'subscript', 'superscript', 'removeFormat', '|',
+                    'bulletedList', 'numberedList', 'todoList', '|',
+                    'outdent', 'indent', '|',
+                    'undo', 'redo',
+                    '-',
+                    'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', 'highlight', '|',
+                    'alignment', '|',
+                    'link', 'uploadImage', 'blockQuote', 'insertTable', 'mediaEmbed', 'codeBlock', 'htmlEmbed', '|',
+                    'specialCharacters', 'horizontalLine', 'pageBreak', '|',
+                    'textPartLanguage', '|',
+                    'sourceEditing'
+                ],
+                shouldNotGroupWhenFull: true
+            },
+        })
+        .then(editor => {
+
+            console.log(editor, "editor")
+        })
+        .catch(error => {
+            console.error(error);
+        });
+
+</script>
+<script type="module" src="../pugCode/index.js"></script>
+
+</body>
+</html>

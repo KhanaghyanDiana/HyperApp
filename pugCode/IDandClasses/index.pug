@@ -1,0 +1,50 @@
+mixin list
+    ul
+        li foo
+        li bar
+        li baz
+
+
+doctype html
+body
+    head
+        link(rel="stylesheet" href='style.css')
+        style.
+            p {
+               color:green;
+            }
+    // ids
+    header
+     h1#id hello from me
+     p.className classname for the p
+     .divClas
+         #name
+             // attributes
+    input(type="password" placeholder=`${ 5<2 ? "ok":"not Ok"}` )
+    input&attributes(type="password")
+    -const styles = {color:"green", border:"1px solid, green"}
+        p(style= styles) I am styles
+        -const arr = ["one", "two"]
+        div(class=arr)
+    -const info={is:true, name:'Diana'}
+        if info.is
+        h1 #{info.name}
+    - const statusOrder = null
+     case statusOrder
+        when "Pending"
+            h1 Your status is Pending
+        when "resolved"
+                 h2 Your status is resolved
+        default
+          h4 register
+include include/nav
+    include include/about
+        +list
+
+
+
+
+
+
+
+
